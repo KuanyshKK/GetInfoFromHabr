@@ -1,0 +1,91 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="0"
+               Grid.Row="0"
+               FontStyle="Italic"
+               >Title
+        </Label>
+        <TextBox x:Name="txtHabrTitle"
+                   Margin="5,5,5,5"
+                   Grid.Column="1"
+                   Background="Azure"                   
+            >Интересное</TextBox>
+
+        <Label Grid.Column="0"
+               Grid.Row="1"
+               >
+            Description
+        </Label>
+        <TextBox x:Name="txtHabrDesc"
+                   Margin="5,5,5,5"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Background="Azure"                   
+            ></TextBox>
+
+        <Label Grid.Column="0"
+               Grid.Row="2"
+               >
+            PubDate
+        </Label>
+        <TextBox x:Name="txtHabrPub"
+                   Margin="5,5,5,5"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   Background="Azure"                   
+            ></TextBox>
+
+        <Button x:Name="btnGetInfo"
+                Width="180"
+                Grid.Row="3"
+                Grid.Column="1"                
+                Margin="70,0,0,0" 
+                HorizontalAlignment="Left"
+                Click="btnGetInfo_Click"
+            >Получить информацию
+        </Button>
+
+        <Button x:Name="btnCreateXml"
+                Width="180"
+                Grid.Row="3"
+                Grid.Column="1"               
+                Margin="0,0,140,0"   
+                HorizontalAlignment="Right"
+                Click="btnCreateXML_Click"
+            >Создать Xml
+        </Button>
+
+        <TextBox Grid.Row="4"
+                 Grid.Column="1"
+                 Margin="0,0,70,0"
+                 x:Name="status" Height="30" FontWeight="Bold"
+                 Foreground="Azure"/>
+        <ScrollViewer Grid.Column="2"
+                      Grid.Row="5"
+                      VerticalScrollBarVisibility="Visible" 
+                      HorizontalScrollBarVisibility="Hidden"
+                      Height="500" CanContentScroll="True" Name="scroll">
+            <TextBox TextWrapping="Wrap" x:Name="TextFromXML" Margin="10,10,10,10" Width="400" Foreground="Black" ></TextBox>
+        </ScrollViewer>
+    </Grid>
+</Window>
